@@ -1,0 +1,22 @@
+body {
+	font-family: Verdana, Arial, sans-serif;
+	margin: 10px;
+}
+#location, #distance {
+	padding: 5px;
+}
+#map {
+	margin: 5px;
+	width: 100%;
+	height: 300px;
+	border: 1px solid black;
+}
+
+
+/* 
+To go full screen: 
+	html, body, #map {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }*/

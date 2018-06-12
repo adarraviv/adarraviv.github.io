@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Quiz | Hebrew 101</title>
+	<meta name="description" content="Start Learning Hebrew with a few basic leasons.">
+	<meta name="keywords" content="Hebrew, Evrit, Language Learning">
+ 	<meta name="author" content="Adar Raviv">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		img {
+		margin:2px 10px;
+		}
+		#drop {
+		min-height:100px;
+		width:90%;
+		margin-left:10%;
+		border:5px solid #000;
+		font:0.875em Verdana, sans-serif;
+		padding:10px;
+		margin:5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<nav role="navigation">
+			<ul class="sidenav" style=" top: 0;">
+				<li><a href="HTML5Structure.html">Home</a></li>
+				<li><a href="HTML5VideoandAudio.html">Teaching Videos and Audios</a></li>
+				<li><a href="HTML5Canvas.html">Learn Shapes</a></li>
+				<li><a class="active" href="HTML5DragandDrop.html">Quiz</a></li>
+				<li><a href="HTML5Geolocation.html">Find Location</a></li>
+				<li><a href="HTML5Form.html">Contact</a></li>
+			</ul>
+		</nav>
+		<header role="banner">
+			<h1 style="margin-bottom:0px;">Hebrew 101</h1>
+			<h2>Learn the basic of the Hebrew Language</h2>
+			<hr>
+		</header>
+		<main role="main">
+			<article>
+				<h1>Hebrew Quiz</h1>
+				<img src="Kaf.png" style="margin:5px;" alt="Wrong Answer.">
+				<img src="Pe.png" style="margin:5px;" alt="Incorrect!!">
+				<img src="Mem.png" style="margin:5px;" alt="Correct Answer!!!">
+				<img src="Resh.png" style="margin:5px;" alt="Try another answer.">
+				<img src="He.png" style="margin:5px;" alt="Not Correct.">
+				<div id="drop"><strong>Which image depicts the letter hebrew mem. (Drag and drop the letter to this box to check if you are Correct.)</strong></div>
+				<script>
+				var drop = document.getElementById('drop');
+				drop.ondrop = function(event) {
+				this.innerHTML += '<p>' +event.dataTransfer.getData('Text') +
+				'</p>';
+					event.cancelBubble = true;
+					return false;
+				}
+				function cancelEvent() {return false;}
+				drop.ondragenter = cancelEvent;
+				drop.ondragover = cancelEvent;
+
+				var imgs = document.getElementsByTagName("img"), i = imgs.length; 
+				while (i--) {
+					imgs[i].ondragstart = function(event) {
+						event = event || window.event;
+						event.dataTransfer.setData('Text', this.getAttribute('alt'));
+					}
+				}
+				</script>
+			</article>
+		</main>
+		<footer role="contentinfo">
+			<small>Copyright &copy; 2017, A. Raviv. All rights reserved.</small>
+		</footer>
+	</div>
+</body>
+</html>

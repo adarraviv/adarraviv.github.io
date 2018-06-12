@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Contact Us | Hebrew 101</title>
+	<meta name="description" content="Start Learning Hebrew with a few basic leasons.">
+	<meta name="keywords" content="Hebrew, Evrit, Language Learning">
+ 	<meta name="author" content="Adar Raviv">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="dist/html5shiv.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<nav role="navigation">
+			<ul class="sidenav" style=" top: 0;">
+				<li><a href="HTML5Structure.html">Home</a></li>
+				<li><a href="HTML5VideoandAudio.html">Teaching Videos and Audios</a></li>
+				<li><a href="HTML5Canvas.html">Learn Shapes</a></li>
+				<li><a href="HTML5DragandDrop.html">Quiz</a></li>
+				<li><a href="HTML5Geolocation.html">Find Location</a></li>
+				<li><a class="active" href="HTML5Form.html">Contact</a></li>
+			</ul>
+		</nav>
+		<header role="banner">
+			<h1 style="margin-bottom:0px;">Hebrew 101</h1>
+			<h2>Learn the basic of the Hebrew Language</h2>
+			<hr>
+		</header>
+		<main role="main">
+			<article>
+				<h3><b>Contact Us</b></h3>
+				<form id="contactForm" name="contactForm" method="POST" role="search">
+					<label for="firstName">First Name</label>
+					<input type="text" id="firstName" name="firstName" placeholder="First" pattern="[a-zA-Z0-9_ ]+.*\S.*" autofocus required><br>
+					<label for="lastName">Last Name</label>
+					<input type="text" id="lastName" name="firstName" placeholder="Last" pattern="[a-zA-Z0-9_ ]+.*\S.*" required><br>
+					<label for="phone">Phone Number</label>
+					<input type="tel" id="phone" name="phone" placeholder="(000)000-0000" required><br>
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" placeholder="----@----.---" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"required><br>
+					<label for="date">First Meeting</label>
+					<input type="date" id="date" name="date"><br>			
+					<label for="week">Week of Meeting</label>
+					<input type="week" id="week" name="week"><br>
+					<label for="timePreferred">Preferred Class Time</label>
+					<input type="time" id="timePreferred" name="timePreferred"><br>
+					<label for="color">Favorite Color</label>
+					<input type="color" id="color" name="color"><br>
+					<label for="number">Favorite Number</label>
+					<input type="number" id="number" name="number"><br>
+					<br>
+					<button type="button">Reset</button><button type="submit">Submit</button>
+				</form>
+			</article>
+		</main>
+		<footer role="contentinfo">
+			<small>Copyright &copy; 2017, A. Raviv. All rights reserved.</small>
+		</footer>
+	</div>
+</body>
+</html>

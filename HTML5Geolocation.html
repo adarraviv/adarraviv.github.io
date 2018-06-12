@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Find Location | Hebrew 101</title>
+	<meta name="description" content="Start Learning Hebrew with a few basic leasons.">
+	<meta name="keywords" content="Hebrew, Evrit, Language Learning">
+ 	<meta name="author" content="Adar Raviv">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="dist/html5shiv.js"></script>
+	<script src="geolocate.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<style>
+		.container{width: 67%; margin-left: 16%;}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<nav role="navigation">
+			<ul class="sidenav" style=" top: 0;">
+				<li><a href="HTML5Structure.html">Home</a></li>
+				<li><a href="HTML5VideoandAudio.html">Teaching Videos and Audios</a></li>
+				<li><a href="HTML5Canvas.html">Learn Shapes</a></li>
+				<li><a href="HTML5DragandDrop.html">Quiz</a></li>
+				<li><a class="active" href="HTML5Geolocation.html">Find Location</a></li>
+				<li><a href="HTML5Form.html">Contact</a></li>
+			</ul>
+		</nav>
+		<header role="banner">
+			<h1 style="margin-bottom:0px;">Hebrew 101</h1>
+			<h2>Learn the basic of the Hebrew Language</h2>
+			<hr>
+		</header>
+		<main role="main">
+			<article>
+				<div id="location">Your location will be displayed here via the .js code</div>
+				<div id="distance"></div>
+				<div id="map"></div>
+			</article>
+		</main>
+		<footer role="contentinfo">
+			<small>Copyright &copy; 2017, A. Raviv. All rights reserved.</small>
+		</footer>
+	</div>
+</body>
+</html>
