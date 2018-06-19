@@ -22,7 +22,6 @@
 	</style>
 </head>
 <body>
-	<script src="canvas.js"></script>
 	<div id="wrapper">
 		<nav role="navigation">
 			<ul class="sidenav" style=" top: 0;">
@@ -44,30 +43,97 @@
 				<div style="width:30%;display:inline-block;">
 					<h3 style="text-align:center">Rectangle=<ruby><b>מַלבֵּן</b><rp>(</rp><rt>mahl-BEHN</rt><rp>)</rp></ruby></h3>
 					<div class="container"><canvas id="mycanvas" width="190" height="150"></canvas></div>
+					<script>
+						var cnv = document.getElementById('mycanvas');
+						var ctx = cnv.getContext('2d');
+						ctx.fillStyle = 'green';
+						ctx.fillRect(45, 50, 100, 50);
+					</script>
 				</div>
 				<div style="width:30%;display:inline-block;">
 					<h3 style="text-align:center">Triangle=<ruby><b>משולש</b><rp>(</rp><rt>ma-shoo-LAHSH</rt><rp>)</rp></ruby></h3>
 					<div class="container"><canvas id="mycanvas1" width="190" height="150"></canvas></div>
+					<script>
+						var cnv1 = document.getElementById('mycanvas1');
+						var ctx1 = cnv1.getContext('2d');
+						ctx1.beginPath();
+						ctx1.moveTo(90,40);
+						ctx1.lineTo(45,100);
+						ctx1.lineTo(135,100);
+						ctx1.closePath();
+						ctx1.fillStyle = "orange"; ctx1.fill();
+					</script>
 				</div>
 				<div style="width:30%;display:inline-block;">
 					<h3 style="text-align:center">Circle=<ruby><b>מעגל</b><rp>(</rp><rt>ee-GOOL</rt><rp>)</rp></ruby></h3>
 					<div class="container"><canvas id="mycanvas2" width="190" height="150"></canvas></div>
+					<script>
+						var cnv2 = document.getElementById('mycanvas2');
+						var ctx2 = cnv2.getContext('2d');
+						ctx2.fillStyle = 'blue';
+						ctx2.arc(95,70,40,0,Math.PI*2,false);
+						ctx2.fill();
+					</script>
 				</div>
 			</article>
 			<article>
 				<div style="width:30%;display:inline-block;">
 					<!--h3 style="text-align:center">Rectangle=<ruby><b>מַלבֵּן</b><rp>(</rp><rt>mahl-BEHN</rt><rp>)</rp></ruby></h3-->
 					<div class="container"><canvas id="mycanvas3" width="190" height="150"></canvas></div>
+					<script>
+						var cnv3 = document.getElementById('mycanvas3');
+						var ctx3 = cnv3.getContext('2d');
+						ctx3.font = '15px "Arial Black"';
+						ctx3.fillText('Welcome to', 45, 65);
+						ctx3.fillText('Hebrewing Learning', 10, 85);
+					</script>
 				</div>
 				<div style="width:30%;display:inline-block;">
 					<h3 style="text-align:center">Star=<ruby><b>כּוֹכָב</b><rp>(</rp><rt>koh-KHANV</rt><rp>)</rp></ruby></h3>
+					<div class="container"><canvas id="mycanvas4" width="190" height="150"></canvas></div>
+					<script>
+						var cnv4 = document.getElementById('mycanvas4');
+						var ctx4 = cnv4.getContext('2d');
+						var pict = new Image();
+						pict.src = "starPhoto.png";
+						pict.onload = function() {						ctx4.drawImage(pict, 30, 10, pict.width*0.6, pict.height*0.6);}
+					</script>
 				</div>
 				<div style="width:30%;display:inline-block;">
 					<h3 style="text-align:center">ball=<ruby><b>כַּדוּר</b><rp>(</rp><rt>ca-DOOR</rt><rp>)</rp></ruby></h3>
 					<div class="container"><canvas id="mycanvas5" width="190" height="150"></canvas></div>
+					<script>
+						var cnv5 = document.getElementById('mycanvas5');
+						var ctx5 = cnv5.getContext('2d');
+						otherchange = 1;
+						// x and y variables determine the position of the ball
+						x = 150;
+						y = 150;
+						// change determines how far the ball moves during a redraw and which direction
+						change =2;
+						// width and height determine the dimensions of the box.
+						w = 190;
+						h = 150;
+						function animate() {
+							ctx5.fillStyle = 'lightgray';
+							ctx5.fillRect(0,0,w,h);
+							ctx5.fillStyle = 'red';
+							ctx5.beginPath();
+							ctx5.arc(x,y,5,0,Math.PI*2,true);
+							ctx5.fill();
+							if (x>=w||x<=0) {
+								change = -change
+							}
+							x = x + change;
+							if(y>=h||y<=0) {
+								otherchange = -otherchange;
+							}
+							y = y + otherchange;
+						}
+						setInterval(animate, 10);
+					</script>
 				</div>
-			</article>
-		</main>
+			</article>		</main>
 		<footer role="contentinfo">
 			<small>Copyright &copy; 2017, A. Raviv. All rights reserved.</small>
 		</footer>
