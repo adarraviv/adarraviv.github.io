@@ -10,5 +10,3 @@ RewriteRule ^.*$ /protected/yourls-loader.php [L]
 
 order deny,allow
 deny from all
-allow from xx.xxx.xx.xxx
-allow from yyy.yyy.yy.yyy
