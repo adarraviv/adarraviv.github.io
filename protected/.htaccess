@@ -1,3 +1,13 @@
+# BEGIN YOURLS
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /protected/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /protected/yourls-loader.php [L]
+</IfModule>
+# END YOURLS
+
 order deny,allow
 deny from all
 allow from xx.xxx.xx.xxx
